@@ -94,6 +94,7 @@ else:
                                       path.expanduser('~/share/arduino/sketchbook/'))
     AVR_HOME            = resolve_var('AVR_HOME', '')
 
+print ARDUINO_PORT
 
 ARDUINO_BOARD   = resolve_var('ARDUINO_BOARD', 'atmega328')
 ARDUINO_VER     = resolve_var('ARDUINO_VER', 0) # Default to 0 if nothing is specified
@@ -369,6 +370,7 @@ else:
 # Upload
 UPLOAD_PROTOCOL = getBoardConf('upload.protocol')
 UPLOAD_SPEED = getBoardConf('upload.speed')
+UPLOAD_SPEED = 115200
 
 if UPLOAD_PROTOCOL == 'stk500':
     UPLOAD_PROTOCOL = 'stk500v1'
