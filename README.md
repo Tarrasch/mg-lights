@@ -1,30 +1,28 @@
-# Arscons : scons script for Arduino
+# Led lights and formal grammars
 
-build & upload Arduino sketch on cmdline with scons!
+I use scons to upload my program to my ardunino. Thanks [scons]! :)
 
-- No java needed!
-- Use Arduino IDE's conf. so, all board which supported by Arduino supported by arscons.
-- Works on Ubuntu Linux, Mac OS X and Windows.
-- Need pyserial to triggering reset just before upload.
+![Photo](https://github.com/Tarrasch/motion-serving/raw/master/photo.png
+"Plugged up Arduino One")
 
-## Basic Usage:
+## Arduino setup
 
-make a folder which have same name of the sketch (ex. Blink/ for Blink.pde)
-put the sketch and the SConstruct under the folder.
-to make the HEX. do following in the folder.
+I know almost nothing about electronics, however following
+[these](http://wiring.org.co/learning/basics/rgbled.html)
+[two](http://arduino.cc/en/tutorial/button) manuals and doing some manual
+tweaking I got the hardware to work the way I wanted.
 
-    $ scons
+## Uploading program
 
-to upload the binary, do following in the folder.
+These two commands worked for me, after plugging in my Arduino One to my Ubuntu
+machine (worked on both 12.04 and 13.04)
 
-    $ scons upload
+    scons
+    scons ARDUINO_PORT=/dev/ttyACM0 upload
 
-- refer [Expert Usage](wiki/Expert-Usage) for change the confs.
-- refer [Arscons Users](wiki/Arscons-Users) for arscons in practice (and hacks!)
+## More info
 
+For more info, including how I generated most of the c source code. See this
+[similar repository](https://github.com/Tarrasch/motion-serving) by me.
 
-## Thanks to:
-
-- Ovidiu Predescu <ovidiu@gmail.com> and Lee Pike <leepike@gmail.com> for Mac port and bugfix.
-- Steven Ashley <steven@ashley.net.nz> for Windows port.
-- Kyle Gordon for many patches which including Arduino-1 support
+[scons]: https://github.com/suapapa/arscons/
