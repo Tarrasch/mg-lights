@@ -2,7 +2,7 @@
 
 #include "Arduino.h"
 
-int REDPin = 4;    // RED pin of the LED to PWM pin 4
+int REDPin = 3;    // RED pin of the LED to PWM pin 4
 int GREENPin = 5;  // GREEN pin of the LED to PWM pin 5
 int BLUEPin = 6;   // BLUE pin of the LED to PWM pin 6
 int brightness = 0; // LED brightness
@@ -40,6 +40,7 @@ typedef enum {
   KLEENE       // Like predicate, but "stay where you are" if true
 } symbol_type_t ;
 
+// XXX: Since this is real hardware I decereased these numbers by a lot
 #define MAX_PRODUCTION_LENGTH 10
 #define MAX_PRODUCTIONS 10
 #define STORE_SIZE 20
@@ -197,6 +198,7 @@ bool_t predicate__lp_and_sp__lp_not_sp_down_rp__sp__lp_not_sp_down_rp__rp_ (obse
 return (!(obs.down)) && (!(obs.down));
 }
 
+// XXX: go is a nice helper function. It includes a sleep phase
 void go(int red, int green, int blue) {
   red = constrain(red, 0, 255);
   green = constrain(green, 0, 255);
@@ -209,26 +211,26 @@ void go(int red, int green, int blue) {
 }
 
 void mutator_yellow () {
-  go(150, 100, 0);
+  go(120, 80, 0); // XXX
 }
 void mutator_red () {
-  go(150, 0, 0);
+  go(80, 0, 0); // XXX
 }
 void mutator_blu () {
-  go(0, 0, 50);
+  go(0, 0, 40); // XXX
 }
 void mutator_strong_red () {
-  go(255, 0, 0);
+  go(255, 0, 0); // XXX
 }
 void mutator_strong_yellow () {
-  go(255, 200, 0);
+  go(255, 150, 0); // XXX
 }
 void mutator_strong_blu () {
-  go(0, 0, 200);
+  go(0, 0, 160); // XXX
 }
 
 observation_t make_observation () {
-  return observation_t { digitalRead(buttonPin) == HIGH };
+  return observation_t { digitalRead(buttonPin) == HIGH }; // XXX
 }
 
 extern nonterminal_t nonterminal_b;
