@@ -25,4 +25,10 @@ machine (worked on both 12.04 and 13.04)
 For more info, including how I generated most of the c source code. See this
 [similar repository](https://github.com/Tarrasch/motion-serving) by me.
 
+### Video
+
+I made a 7 minute [video] of this for people attending a particular [conference]. 
+
 [scons]: https://github.com/suapapa/arscons/
+[video]: https://vimeo.com/68833696
+[conference]: http://verifiablerobotics.com/RSS13/index.html
