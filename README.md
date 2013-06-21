@@ -2,7 +2,7 @@
 
 I use scons to upload my program to my ardunino. Thanks [scons]! :)
 
-![Photo](https://github.com/Tarrasch/motion-serving/raw/master/photo.png
+![Photo](https://github.com/Tarrasch/mg-lights/raw/master/photo.png
 "Plugged up Arduino One")
 
 ## Arduino setup
